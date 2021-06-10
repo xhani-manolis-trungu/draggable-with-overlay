@@ -1,18 +1,35 @@
-<h1>Draggable</h1>
+<!-- <h1>Draggable</h1>
 
 <h2>Part 1 - draggable directive</h2>
 
 <div class="box" appDraggable>
   Draggable
-</div>
+</div> -->
+
+	<button mat-button (click)="open=!open"#trigger="cdkOverlayOrigin" cdkOverlayOrigin>Toggle cdkOverlayOrigin</button>
 
 <h2>Part 2 - movable directive</h2>
 
+<ng-template cdk-connected-overlay 
+    #debugRef="cdkConnectedOverlay"[cdkConnectedOverlayScrollStrategy]="scrollStrategy" [cdkConnectedOverlayOrigin]="trigger"
+		 [cdkConnectedOverlayOpen]="open"
+                  (detach)="overlayDetach(debugRef)"
+             (attach)="overlayAttach(debugRef)">
+
 <div class="box" appMovable>
-  Movable 1
+  <video width="400" controls>
+  <source src="mov_bbb.mp4" type="video/mp4">
+  <source src="mov_bbb.ogg" type="video/ogg">
+  Your browser does not support HTML video.
+</video>
 </div>
 
-<div class="box" appMovable [appMovableReset]="true">
+<ng-template>
+
+
+
+
+<!-- <div class="box" appMovable [appMovableReset]="true">
   Movable 2
 </div>
 
@@ -34,4 +51,4 @@
   <div class="box helper" *appDraggableHelper>
     Drag me!
   </div>
-</div>
+</div> -->
