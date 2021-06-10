@@ -7,6 +7,11 @@ import {
   CdkConnectedOverlay
 } from "@angular/cdk/overlay";
 
+// 
+// 
+// https://www.youtube.com/watch?v=c7VPvFPFTeY  Video for more info
+// 
+// 
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html',
